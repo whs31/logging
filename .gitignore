@@ -1,0 +1,45 @@
+# Build artifacts
+cmake-build-*
+build*/
+cmake-visual-studio-*
+
+# Misc
+logs*/
+doc/html
+doc/doxy.log
+
+# Qt artifacts
+*.user
+*.autosave
+moc_*
+ui_*
+*.moc
+*.o
+*.prl
+
+# Doxygen generated
+src/html/
+src/latex/
+!docs/images
+!docs/src
+docs/*
+
+# Conan 
+CMakeUserPresets.json
+conan_provider.cmake
+
+# Rust
+Cargo.lock
+target
+
+# DLL exports
+.export
+
+# IDE
+.idea/*
+.vscode/*
+settings/userSettings.json
+settings/*.cfg
+
+# Misc
+__pycache__

@@ -1,0 +1,11 @@
+@PACKAGE_INIT@
+
+set(config_targets_file_rlog @config_targets_file@)
+
+include(CMakeFindDependencyMacro)
+
+find_dependency(rolly REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/${config_targets_file_rlog}")
+
+check_required_components(log)
