@@ -51,8 +51,14 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_sources(${PROJECT_NAME}
   PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/log.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/progress_bar.cc
 )
+
+if(ROLLY_LOG_PYBIND)
+  message(STATUS "[${ROLLY_LOG_FULL_NAME}] adding python bindings")
+  target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/pybind.pybind.cc)
+endif()
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC

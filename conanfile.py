@@ -29,7 +29,7 @@ class RLogRecipe(ConanFile):
 
     @property
     def _min_cppstd(self):
-        return "17" if self.options.compat else "20"
+        return "17"
 
     def requirements(self):
         self.requires("spdlog/[>=1.14.0]", transitive_headers=True, transitive_libs=True)
@@ -45,7 +45,7 @@ class RLogRecipe(ConanFile):
             check_min_cppstd(self, self._min_cppstd)
 
     def configure(self):
-        self.options["spdlog/*"].shared = self.options.shared
+        self.options["spdlog/*"].shared = False
         self.options["rolly/*"].shared = self.options.shared
         self.options["rolly/*"].compat = self.options.compat
 
